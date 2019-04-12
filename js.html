@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+
+</style>
+
+<script>
+	
+    function printSingleArray()
+    { 
+    var curruser="Ram";
+    var currintromessage="Welcome"+curruser;
+    document.getElementById("welcomeIntro").innerHTML=currintromessage;
+    var i,a="";
+
+    var sampleArray=["UI","JAVA","ANGULAR","React"];
+	for(i=0;i<sampleArray.length;i++)
+	   {
+		a+=document.getElementById("showArrayValue").innerHTML=sampleArray[i]+"<br>";
+		
+	   }
+	document.write(a);
+       }
+    
+
+   function printObjValue(){
+     var currObj={"empname":"aaaa","empid":51777650,"empphone":78995412365}
+debugger;
+     document.getElementById("currentvalue").innerHTML=currObj.empname + " "+ currObj.empphone;
+     console.log(currObj);
+    }
+    
+function dataBinding()
+    {
+    var dataDetails=[
+    {"empname":"bbb",
+    "address":[
+          {"phoneno":"0427-12344",
+            "email":"qqqq@gmail.com",
+            "web":"http://www.gow.com"}
+          ]
+     },
+     {"empname":"cccb",
+    "address":[
+          {"phoneno":"0427-78965",
+            "email":"ccc@gmail.com",
+            "web":"http://www.abc.com"}
+          ]
+     }
+   ];
+
+var data="<table border='1'><tr> <th> empname</th><th>phoneno</th> <th>email</th><th>web </th></tr>";
+for(var i=0;i<dataDetails.length;i++)
+{
+data= data + "<tr><td>"+dataDetails[i].empname+"</td>";
+var address= dataDetails[i].address;
+   for(var j=0;j<address.length;j++)
+     {
+	data=data+"<td>"+ address[j].phoneno+"</td>";
+	data=data+"<td>"+address[j].email+"</td>";
+	data=data+"<td>"+address[j].web+"</td></tr>";
+     }
+
+console.log();
+}
+data+="</table>";
+document.getElementById("mulvalue").innerHTML=data;
+}
+</script>	
+</head>
+<body>
+<p id ="welcomeIntro"></p>
+<button onclick="printSingleArray();">click</button>
+<p id="showArrayValue"></p>
+<button onclick="printObjValue();">click2</button>
+<p id="currentvalue"></p>
+
+<button onclick="dataBinding();">click3</button>
+<p id="mulvalue"></p>
+
+
+</body>
+
+
+
+
+</html>
